@@ -33,24 +33,38 @@ function staticLoadPlaces() {
         {
             name: "Teatro Municipal",
             location: {
-                lat: -22.9055297112, // change here latitude if using static data
-                lng: -43.1725609764, // change here longitude if using static data
+                lat: -22.908946906837084, // change here latitude if using static data
+                lng: -43.1765680709474, // change here longitude if using static data
             }
         },
         {
-            name: "Ponte Rio Niterói",
+            name: "Catedral Metropolitana",
             location: {
-                lat: -22.8691, // change here latitude if using static data
-                lng: -43.1791, // change here longitude if using static data
+                lat: -22.910708665991088, // change here latitude if using static data
+                lng: -43.180645942249626, // change here longitude if using static data
             }
         },
         {
             name: "Arcos da Lapa",
             location: {
-                lat: -19.7015, // change here latitude if using static data
-                lng: -43.9617, // change here longitude if using static data
+                lat: -22.912769562737516, // change here latitude if using static data
+                lng: -43.1799963698298, // change here longitude if using static data
             }
-        }
+        },
+        {
+            name: "Mosteiro de Santo Antônio",
+            location: {
+                lat: -22.907218366172494, // change here latitude if using static data
+                lng: -43.17918440430502, // change here longitude if using static data
+            }
+        },
+        {
+            name: "Praça Tiradentes",
+            location: {
+                lat: -22.906969055604403, // change here latitude if using static data
+                lng: -43.18275705261405, // change here longitude if using static data
+            }
+        },
     ];
 }
 
