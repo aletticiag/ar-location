@@ -66,6 +66,7 @@ function staticLoadPlaces() {
                 lng: -43.18275705261405, // change here longitude if using static data
             }
         },
+        //Pão de açucar, Santos Dumont, Corcovado
     ];
 }
 
