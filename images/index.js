@@ -36,15 +36,8 @@ function staticLoadPlaces() {
                 lat: -22.908946906837084, // change here latitude if using static data
                 lng: -43.1765680709474, // change here longitude if using static data
             },
-            link: "http://theatromunicipal.rj.gov.br/"
-        },
-        {
-            name: "Catedral Metropolitana",
-            location: {
-                lat: -22.910708665991088, // change here latitude if using static data
-                lng: -43.180645942249626, // change here longitude if using static data
-            },
-            link: "https://catedral.com.br/"
+            link: "http://theatromunicipal.rj.gov.br/",
+            img: "#teatro"
         },
         {
             name: "Arcos da Lapa",
@@ -52,24 +45,9 @@ function staticLoadPlaces() {
                 lat: -22.912769562737516, // change here latitude if using static data
                 lng: -43.1799963698298, // change here longitude if using static data
             },
-            link: "https://freewalkertours.com/pt-br/arcos-da-lapa-rio-de-janeiro/"
-        },
-        {
-            name: "Mosteiro de Santo Antônio",
-            location: {
-                lat: -22.907218366172494, // change here latitude if using static data
-                lng: -43.17918440430502, // change here longitude if using static data
-            },
-            link: "https://franciscanos.org.br/conventosantoantonio/"
-        },
-        {
-            name: "Praça Tiradentes",
-            location: {
-                lat: -22.906969055604403, // change here latitude if using static data
-                lng: -43.18275705261405, // change here longitude if using static data
-            },
-            link: "https://pt.wikipedia.org/wiki/Pra%C3%A7a_Tiradentes_(Rio_de_Janeiro)"
-        },
+            link: "https://freewalkertours.com/pt-br/arcos-da-lapa-rio-de-janeiro/",
+            img: "#arcos-da-lapa"
+        }
     ];
 }
 
@@ -114,11 +92,18 @@ function renderPlaces(places) {
         let longitude = place.location.lng;
 
         // add place name
-        let text = document.createElement('a-image');
+        /*
+        let text = document.createElement('a-link');
         text.setAttribute('gps-projected-entity-place', {latitude,longitude});
         text.setAttribute('title', place.name);
         text.setAttribute('href', place.link);
         text.setAttribute('scale', '15 15 15');
+        */
+
+        let imagem = document.createElement('a-image')
+        imagem.setAttribute('gps-projected-entity-place', {latitude,longitude});
+        imagem.setAttribute('scale', '15 15 15');
+        imagem.setAttribute('src', place.img)
 
         text.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded', { detail: { component: this.el }}))
