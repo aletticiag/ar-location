@@ -114,7 +114,7 @@ function renderPlaces(places) {
         let longitude = place.location.lng;
 
         // add place name
-        let text = document.createElement('a-image');
+        let text = document.createElement('a-link');
         text.setAttribute('gps-projected-entity-place', {latitude,longitude});
         text.setAttribute('title', place.name);
         text.setAttribute('href', place.link);
