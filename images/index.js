@@ -105,10 +105,10 @@ function renderPlaces(places) {
         imagem.setAttribute('scale', '15 15 15');
         imagem.setAttribute('src', place.img)
 
-        text.addEventListener('loaded', () => {
-            window.dispatchEvent(new CustomEvent('gps-entity-place-loaded', { detail: { component: this.el }}))
+        imagem.addEventListener('loaded', () => {
+            window.dispatchEvent(new CustomEvent('gps-projected-entity-place-loaded', { detail: { component: this.el }}))
         });
 
-        scene.appendChild(text);
+        scene.appendChild(imagem);
     });
 }
