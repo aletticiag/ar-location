@@ -105,6 +105,7 @@ function renderPlaces(places) {
         imagem.setAttribute('look-at', '[gps-projected-camera]');
         imagem.setAttribute('src', place.img)
         imagem.setAttribute('scale', '20, 20');
+        imagem.setAttribute('clickhandler','')
 
         imagem.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-projected-entity-place-loaded', { detail: { component: this.el }}))
@@ -114,22 +115,23 @@ function renderPlaces(places) {
             ev.stopPropagation();
             ev.preventDefault();
 
-            const name = ev.target.getAttribute('name');
+            alert('Internal click listener!')
+            // const name = ev.target.getAttribute('name');
 
-            const el = ev.detail.intersection && ev.detail.intersection.object.el;
+            // const el = ev.detail.intersection && ev.detail.intersection.object.el;
 
-            if (el && el === ev.target) {
-                const label = document.createElement('span');
-                const container = document.createElement('div');
-                container.setAttribute('id', 'place-label');
-                label.innerText = name;
-                container.appendChild(label);
-                document.body.appendChild(container);
+            // if (el && el === ev.target) {
+            //     const label = document.createElement('span');
+            //     const container = document.createElement('div');
+            //     container.setAttribute('id', 'place-label');
+            //     label.innerText = name;
+            //     container.appendChild(label);
+            //     document.body.appendChild(container);
 
-                setTimeout(() => {
-                    container.parentElement.removeChild(container);
-                }, 1500);
-            }
+            //     setTimeout(() => {
+            //         container.parentElement.removeChild(container);
+            //     }, 1500);
+            // }
         };
 
         imagem.addEventListener('click', clickListener);
