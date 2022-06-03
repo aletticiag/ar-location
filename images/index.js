@@ -37,7 +37,7 @@ function staticLoadPlaces() {
                 lng: -43.1765680709474, // change here longitude if using static data
             },
             link: "http://theatromunicipal.rj.gov.br/",
-            img: "#teatro"
+            img: "#theatro"
         },
         {
             name: "Arcos da Lapa",
@@ -102,6 +102,7 @@ function renderPlaces(places) {
 
         let imagem = document.createElement('a-image')
         imagem.setAttribute('gps-projected-entity-place', {latitude,longitude});
+        imagem.setAttribute('look-at', '[gps-projected-camera]');
         imagem.setAttribute('scale', '15 15 15');
         imagem.setAttribute('src', place.img)
 
