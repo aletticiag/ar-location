@@ -9,6 +9,7 @@
     <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
     <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
     <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
+    <script src="play-on-click.js"></script>
     <!-- <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script> -->
     
     <!-- Image link template to be reused. -->
@@ -23,20 +24,26 @@
         proxy-event="event: click; to: #image-360; as: fade"
         sound="on: click; src: #click-sound"></a-entity>
     </script>
+    <script>
+      var box = document.querySelector('#my-video');
+      box.addEventListener('click', function () { console.log("click")} );
+  </script>
   </head>
   <body>
     <a-scene>
       <a-assets>
-        <img id="20-andar-1-thumb" crossorigin="anonymous" src="./20_andar_1.jpg">
-        <img id="20-andar-2-thumb" crossorigin="anonymous" src="./20_andar_2.jpg">
-        <img id="20-andar-3-thumb" crossorigin="anonymous" src="./20_andar_3.jpg">
-        <img id="20-andar-4-thumb" crossorigin="anonymous" src="./20_andar_4.jpg">
+        <img id="20-andar-1-thumb" crossorigin="anonymous" src="../assets/20_andar_1.jpg">
+        <img id="20-andar-2-thumb" crossorigin="anonymous" src="../assets/20_andar_2.jpg">
+        <img id="20-andar-3-thumb" crossorigin="anonymous" src="../assets/20_andar_3.jpg">
+        <img id="20-andar-4-thumb" crossorigin="anonymous" src="../assets/20_andar_4.jpg">
         <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
         
-        <img id="20floor1" src="./20_andar_1.jpg">
-        <img id="20floor2" src="./20_andar_2.jpg">
-        <img id="20floor3" src="./20_andar_3.jpg">
-        <img id="20floor4" src="./20_andar_4.jpg">
+        <img id="20floor1" src="../assets/20_andar_1.jpg">
+        <img id="20floor2" src="../assets/20_andar_2.jpg">
+        <img id="20floor3" src="../assets/20_andar_3.jpg">
+        <img id="20floor4" src="../assets/20_andar_4.jpg">
+
+        <video id="sample-video" preload="auto" autoplay loop="true" src="../assets/dica_mpme_1.mp4"></video>
 
       </a-assets>
 
@@ -51,6 +58,12 @@
         <a-entity template="src: #link" data-src="#20floor2" data-thumb="#20-andar-2-thumb"></a-entity>
         <a-entity template="src: #link" data-src="#20floor3" data-thumb="#20-andar-3-thumb"></a-entity>
         <a-entity template="src: #link" data-src="#20floor4" data-thumb="#20-andar-4-thumb"></a-entity>
+        <a-entity 
+          id="my-video"
+          play-on-click
+          geometry="primitive: plane; height: 1; width: 2" 
+          material="shader: flat; src: #sample-video"
+        ></a-entity>
       </a-entity>
 
       <!-- Camera + cursor. -->
